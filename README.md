@@ -30,27 +30,16 @@ Experiments conducted on three partially labeled datasets, OpenImages, LVIS, and
 </table>
 </p>
 
-<!--<p align="center">-->
-<!-- <table class="tg">-->
-<!--  <tr>-->
-<!--    <td class="tg-c3ow"><img src="./pics/ASL_comparison.png" align="center" width="400" ></td>-->
-<!--    <td class="tg-c3ow"><img src="./pics/detection.png" align="center" width="400" ></td>-->
-<!--  </tr>-->
-<!--</table>-->
-<!--</p>-->
-
-<!--<p align="center">-->
-<!-- <table class="tg">-->
-<!--  <tr>-->
-<!--    <td class="tg-c3ow"><img src="./pics/herbarium.png" align="center" width="400" ></td>-->
-<!--    <td class="tg-c3ow"><img src="./pics/open_images.png" align="center" width="400" ></td>-->
-<!--  </tr>-->
-<!--</table>-->
+### Class-aware Selective Approach
+An overview of our approach is depicted in the following figure.
+ 
+<p align="center">
+ <table class="tg">
+  <tr>
+    <td class="tg-c3ow"><img src="./pics/CSL_approach.png" align="center" width="900" ></td>
+  </tr>
+</table>
 </p>
-
-## 23/4/2021 Update - ImageNet21K Pretraining
-In a new [article](https://github.com/Alibaba-MIIL/ImageNet21K) we released, we share pretrain weights for different models, that dramatically outperfrom standard pretraining on downstream tasks, including multi-label ones.  
-We also compare in the article multi-label pretrianing with ASL on ImageNet21K to pretraining with standard loss functions (cross-entropy and focal loss).
 
 ## Training Code Now Available !
 
@@ -58,21 +47,6 @@ With great collaboration by [@GhostWnd](https://github.com/GhostWnd), we
 now provide a [script](train.py) for fully reproducing the article
 results, and finally a <u>modern</u> multi-label training code is
 available for the community.
-## Frequently Asked Questions
-Some questions are repeatedly asked in the issues section. make sure to
-review them before starting a new issue:
-- Regarding combining ASL with other techniques, see
-  [link](https://github.com/Alibaba-MIIL/ASL/issues/35)
-- Regarding implementation of asymmetric clipping, see [link](https://github.com/Alibaba-MIIL/ASL/issues/10)
-- Regarding disable_torch_grad_focal_loss option, see
-  [link](https://github.com/Alibaba-MIIL/ASL/issues/31)
-- Regarding squish Vs crop resizing, see
-  [link](https://github.com/Alibaba-MIIL/ASL/issues/30#issuecomment-754005570)
-- Regarding training tricks, see
-  [link](https://github.com/Alibaba-MIIL/ASL/issues/30#issuecomment-750780576)
-- How to apply ASL to your own dataset, see
-  [link](https://github.com/Alibaba-MIIL/ASL/issues/22#issuecomment-736721770)
-
 
 
 ## Asymmetric Loss (ASL) Implementation
