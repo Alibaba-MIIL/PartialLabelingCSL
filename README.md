@@ -22,8 +22,7 @@ Experiments conducted on three partially labeled datasets, OpenImages, LVIS, and
 <p align="center">
  <table class="tg">
   <tr>
-    <td class="tg-c3ow"><img src="./pics/loss_graph.png" align="center" width="400" ></td>
-    <td class="tg-c3ow"><img src="./pics/backbones.png" align="center" width="400" ></td>
+    <td class="tg-c3ow"><img src="./pics/intro_modes_CSL.png" align="center" width="400" ></td>
   </tr>
 </table>
 </p>
