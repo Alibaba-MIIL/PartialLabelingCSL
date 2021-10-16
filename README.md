@@ -50,8 +50,15 @@ An implementation of the Class-aware Selective Loss (CSL) can be found [here](/s
 
 
 ## Pretrained Models
-In this [link](MODEL_ZOO.md), we provide pre-trained models on various
-dataset. 
+<!-- In this [link](MODEL_ZOO.md), we provide pre-trained models on various dataset.  -->
+We provide models pretrained on the OpenImages datasset with different modes and architectures:
+
+| Model | Link | mAP |
+| :---         |     :---:      |          ---: |
+| Ignore      | git status     | git status    |
+| Negative    | git diff       | git diff      |
+| Selective (CSL)    | git diff       | git diff      |
+
 
 
 ## Inference Code (Demo)
