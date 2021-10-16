@@ -43,7 +43,7 @@ An overview of our approach is summarized in the following figure:
 
 #### Loss Implementation 
 
-Our loss combines a selective approach for adjusting the training mode for each class individualy with a partial asymmetric loss. 
+Our loss consists of a selective approach for adjusting the training mode for each class individualy and a partial asymmetric loss. 
 <!-- The selective approach is based on two probabilities quantities: label likelihood and label prior. The partial asymmetric loss emphasizes the contribution of the annotated labels.   -->
 An implementation of the Class-aware Selective Loss (CSL) can be found [here](/src/loss_functions/partial_asymmetric_loss.py). 
 - ```class PartialSelectiveLoss(nn.Module)```
@@ -54,7 +54,7 @@ An implementation of the Class-aware Selective Loss (CSL) can be found [here](/s
 We provide models pretrained on the OpenImages datasset with different modes and architectures:
 
 | Model | Architecture | Link | mAP |
-| :---            | :---      | :---:     |  |
+| :---            | :---:      | :---:     | ---: |
 | Ignore          | TResNet-M | link      | 85.38       |
 | Negative        | TResNet-M | [link]    | 85.85       |
 | Selective (CSL) | TResNet-M  | [link]   | 86.72       |
@@ -65,12 +65,12 @@ We provide models pretrained on the OpenImages datasset with different modes and
 ## Inference Code (Demo)
 We provide [inference code](infer.py), that demonstrate how to load our
 model, pre-process an image and do actuall inference. Example run of
-MS-COCO model (after downloading the relevant model):
+OpenImages model (after downloading the relevant model):
 ```
 python infer.py  \
---dataset_type=MS-COCO \
---model_name=tresnet_l \
---model_path=./models_local/MS_COCO_TRresNet_L_448_86.6.pth \
+--dataset_type=OpenImages \
+--model_name=tresnet_m \
+--model_path=./models_local/mtresnet_opim_86.72.pth \
 --pic_path=./pics/000000000885.jpg \
 --input_size=448
 ```
