@@ -54,7 +54,7 @@ An implementation of the Class-aware Selective Loss (CSL) can be found [here](/s
 We provide models pretrained on the OpenImages datasset with different modes and architectures:
 
 | Model | Architecture | Link | mAP |
-| :---            | :---      | :---:     | :---:   mAP |
+| :---            | :---      | :---:     |  |
 | Ignore          | TResNet-M | link      | 85.38       |
 | Negative        | TResNet-M | [link]    | 85.85       |
 | Selective (CSL) | TResNet-M  | [link]   | 86.72       |
