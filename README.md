@@ -19,7 +19,7 @@ We propose to estimate the class distribution using a dedicated temporary model,
 Second, during the training of the target model, we emphasize the contribution of annotated labels over originally un-annotated labels by using a dedicated asymmetric loss.
 Experiments conducted on three partially labeled datasets, OpenImages, LVIS, and simulated-COCO, demonstrate the effectiveness of our approach. Specifically, with our novel selective approach, we achieve state-of-the-art results on OpenImages dataset. Code will be made available.
 
-### Challenges in Partial Labeling
+<!-- ### Challenges in Partial Labeling
 (a) In a partially labeled dataset, only a portion of the samples are annotated for a given class. (b) "Ignore" mode exploits only the annotated samples which may lead to a limited decision boundary. (c) "Negative" mode naively treats all un-annotated labels as negatives. It may produce suboptimal decision boundary as it adds noise of un-annotated positive labels. Also, annotated and un-annotated negative samples contribute similarly to the optimization. (d) Our approach aims at mitigating these drawbacks by predicting the probability of a label being present in the image.
  
 <p align="center">
@@ -28,7 +28,7 @@ Experiments conducted on three partially labeled datasets, OpenImages, LVIS, and
     <td class="tg-c3ow"><img src="./pics/intro_modes_CSL.png" align="center" width="1000" ></td>
   </tr>
 </table>
-</p>
+</p> -->
 
 ### Class-aware Selective Approach
 An overview of our approach is summarized in the following figure:
