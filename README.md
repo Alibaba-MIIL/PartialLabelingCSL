@@ -63,22 +63,23 @@ We provide models pretrained on the OpenImages datasset with different modes and
 
 
 ## Inference Code (Demo)
-We provide [inference code](infer.py), that demonstrate how to load our
-model, pre-process an image and do actuall inference. Example run of
+We provide [inference code](infer.py), that demonstrate how to load the
+model, pre-process an image and do inference. Example run of
 OpenImages model (after downloading the relevant model):
 ```
 python infer.py  \
 --dataset_type=OpenImages \
 --model_name=tresnet_m \
 --model_path=./models_local/mtresnet_opim_86.72.pth \
---pic_path=./pics/000000000885.jpg \
+--pic_path=./pics/10162266293_c7634cbda9_o.jpg \
 --input_size=448
 ```
-which will result in:
+
+### Result Examples 
 <p align="center">
  <table class="tg">
   <tr>
-    <td class="tg-c3ow"><img src="./pics/example_inference.jpeg" align="center" width="600" ></td>
+    <td class="tg-c3ow"><img src="./pics/demo_example.png" align="center" width="900" ></td>
   </tr>
 </table>
 </p>
