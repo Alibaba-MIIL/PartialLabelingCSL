@@ -144,6 +144,17 @@ Example of training with FPC simulation:
 | CSL- Selective, P-ASL(4,1,1)  | **85.21**      |  
 
 
+## Estimating the Class Distribution
+The training code contains also the procedure for estimting the class distribution from the data. Our approach enables to rank the classes based on training a temporary model usinig the *Ignore* mode. [link](https://github.com/Alibaba-MIIL/PartialLabelingCSL/blob/cadc2afab73294a0e9e0799eec06b095e50e646e/src/loss_functions/partial_asymmetric_loss.py#L131)
+
+#### Top 10 classes:
+| Method                    | Top 10 ranked classes      | 
+| :---                     | :---:      |
+| Original                           | 'person', 'chair', 'car', 'dining table', 'cup', 'bottle', 'bowl', 'handbag', 'truck', 'backpack'   |
+| Estiimate (Ignore mode)            | 'person', 'chair', 'handbag', 'cup', 'bench', 'bottle', 'backpack', 'car', 'cell phone', 'potted plant'      |
+| Estimate (Negative mode)           | 'kite' 'truck' 'carrot' 'baseball glove' 'tennis racket' 'remote' 'cat' 'tie' 'horse' 'boat'    |
+
+
 ## Citation
 ```
  @misc{benbaruch2020asymmetric, 
@@ -155,8 +166,6 @@ Example of training with FPC simulation:
         primaryClass={cs.CV} }
 ```
 
-## Contact
-Feel free to contact if there are any questions or issues - Emanuel Ben-Baruch (emanuel.benbaruch@alibaba-inc.com).
-
 ## Acknowledgements
-Several images from [OpenImages dataset](https://storage.googleapis.com/openimages/web/index.html) are used in this project. Some components of this code implementation are adapted from the repository https://github.com/Alibaba-MIIL/ASL.
+Several images from [OpenImages dataset](https://storage.googleapis.com/openimages/web/index.html) are used in this project. ֿ\
+Some components of this code implementation are adapted from the repository https://github.com/Alibaba-MIIL/ASL.
