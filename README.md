@@ -41,7 +41,7 @@ An overview of our approach is summarized in the following figure:
 </table>
 </p>
 
-#### Loss Implementation 
+### Loss Implementation 
 
 Our loss consists of a selective approach for adjusting the training mode for each class individualy and a partial asymmetric loss. 
 <!-- The selective approach is based on two probabilities quantities: label likelihood and label prior. The partial asymmetric loss emphasizes the contribution of the annotated labels.   -->
@@ -84,22 +84,6 @@ python infer.py  \
 </table>
 </p>
 
-Example run of OpenImages model:
-```
-python infer.py  \
---dataset_type=OpenImages \
---model_name=tresnet_l \
---model_path=./models_local/Open_ImagesV6_TRresNet_L_448.pth \
---pic_path=./pics/000000000885.jpg \
---input_size=448
-```
-<p align="center">
- <table class="tg">
-  <tr>
-    <td class="tg-c3ow"><img src="./pics/example_inference_open_images.jpeg" align="center" width="600" ></td>
-  </tr>
-</table>
-</p>
 
 
 ## Training Code
