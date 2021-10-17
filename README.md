@@ -87,7 +87,7 @@ python infer.py  \
 
 
 ## Training Code
-Training code is provided ([train.py](train.py)). Also, code for simulating partial annotation for the [MS-COCO dataset](https://cocodataset.org/#download) is available ([here](src/helper_functions/coco_simulation.py)). In particular, two "partial" simulation schemes are implemented: fix-per-class(FPC) and random-per-sample (RPS).
+Training code is provided in ([train.py](train.py)). Also, code for simulating partial annotation for the [MS-COCO dataset](https://cocodataset.org/#download) is available ([here](src/helper_functions/coco_simulation.py)). In particular, two "partial" simulation schemes are implemented: fix-per-class(FPC) and random-per-sample (RPS).
 - FPC: For each class, we randomly sample a fixed number of positive annotations and the same number of negative annotations.  The rest of the annotations are dropped.
 - RPA: We omit each annotation with probability p.
 
