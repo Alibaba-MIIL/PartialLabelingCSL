@@ -79,7 +79,7 @@ python infer.py  \
 <p align="center">
  <table class="tg">
   <tr>
-    <td class="tg-c3ow"><img src="./pics/demo_example.png" align="center" width="900" ></td>
+    <td class="tg-c3ow"><img src="./pics/demo_examples.png" align="center" width="900" ></td>
   </tr>
 </table>
 </p>
