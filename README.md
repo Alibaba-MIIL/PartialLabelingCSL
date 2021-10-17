@@ -87,7 +87,8 @@ python infer.py  \
 
 
 ## Training Code
-TBD...
+Training code is provided [here](train.py). Also, code for simulating partial annotation for the [MS-COCO dataset](https://cocodataset.org/#download) is provided ([link](src/helper_functions/coco_simulation.py)). In particular, two simulation modes are available: fix-per-class(FPS) and random-per-sample (RPS). In FPS, we 
+
 ## Citation
 ```
  @misc{benbaruch2020asymmetric, 
