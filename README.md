@@ -58,7 +58,7 @@ We provide models pretrained on the OpenImages datasset with different modes and
 | Ignore          | TResNet-M | link      | 85.38       |
 | Negative        | TResNet-M | [link]    | 85.85       |
 | Selective (CSL) | TResNet-M  | [link]   | 86.72       |
-| Selective (CSL) | TResNet-L  | [link]   | 87.34       |
+| Selective (CSL) | TResNet-L  | [link]   | **87.34**       |
  
 
 
@@ -87,7 +87,62 @@ python infer.py  \
 
 
 ## Training Code
-Training code is provided [here](train.py). Also, code for simulating partial annotation for the [MS-COCO dataset](https://cocodataset.org/#download) is provided ([link](src/helper_functions/coco_simulation.py)). In particular, two simulation modes are available: fix-per-class(FPS) and random-per-sample (RPS). In FPS, we 
+Training code is provided ([train.py](train.py)). Also, code for simulating partial annotation for the [MS-COCO dataset](https://cocodataset.org/#download) is available ([here](src/helper_functions/coco_simulation.py)). In particular, two "partial" simulation schemes are implemented: fix-per-class(FPC) and random-per-sample (RPS).
+- FPC: For each class, we randomly sample a fixed number of positive annotations and the same number of negative annotations.  The rest of the annotations are dropped.
+- RPA: We omit each annotation with probability p.
+
+Pretrained weights using the ImageNet-21k dataset can be found here: [link](https://github.com/Alibaba-MIIL/ImageNet21K/blob/main/MODEL_ZOO.md)\
+Pretrained weights using the ImageNet-1k dataset can be found here: [link](https://github.com/Alibaba-MIIL/TResNet/blob/master/MODEL_ZOO.md)
+
+Example of training with RPS simulation:
+```
+--data=/mnt/datasets/COCO/COCO_2014
+--model-path=models/pretrain/mtresnet_21k
+--gamma_pos=0
+--gamma_neg=4
+--gamma_unann=4
+--simulate_partial_type=rps
+--simulate_partial_param=0.5
+--partial_loss_mode=selective
+--likelihood_topk=5
+--prior_threshold=0.5
+--prior_path=./outputs/priors/prior_fpc_1000.csv
+```
+
+Example of training with FPC simulation:
+```
+--data=/mnt/datasets/COCO/COCO_2014
+--model-path=models/pretrain/mtresnet_21k
+--gamma_pos=0
+--gamma_neg=4
+--gamma_unann=4
+--simulate_partial_type=fpc
+--simulate_partial_param=1000
+--partial_loss_mode=selective
+--likelihood_topk=5
+--prior_threshold=0.5
+--prior_path=./outputs/priors/prior_fpc_1000.csv
+```
+
+### Typical Training Results
+
+#### FPC (1,000) simulation scheme:
+| Model                    | mAP         | 
+| :---                     | :---:       |
+| Ignore, CE               | 76.46       |
+| Negative, CE             | 81.24       |
+| Negative, ASL (4,1)      | 81.64       |
+| CSL - Selective, P-ASL(4,3,1)  | **83.44**       |     
+
+
+#### RPS (0.5) simulation scheme:
+| Model                    | mAP        | 
+| :---                     | :---:      |
+| Ignore, CE               | 84.90      |
+| Negative, CE             | 81.21      |
+| Negative, ASL (4,1)      | 81.91      |
+| CSL- Selective, P-ASL(4,1,1)  | **85.21**      |  
+
 
 ## Citation
 ```
@@ -101,5 +156,7 @@ Training code is provided [here](train.py). Also, code for simulating partial an
 ```
 
 ## Contact
-Feel free to contact if there are any questions or issues - Emanuel
-Ben-Baruch (emanuel.benbaruch@alibaba-inc.com) or Tal Ridnik (tal.ridnik@alibaba-inc.com).
+Feel free to contact if there are any questions or issues - Emanuel Ben-Baruch (emanuel.benbaruch@alibaba-inc.com).
+
+## Acknowledgements
+Several images from [OpenImages dataset](https://storage.googleapis.com/openimages/web/index.html) are used in this project. Some components of this code implementation are adapted from the repository https://github.com/Alibaba-MIIL/ASL.
