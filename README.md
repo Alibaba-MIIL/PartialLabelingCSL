@@ -1,7 +1,7 @@
 # Multi-label Classification with Partial Annotations using Class-aware Selective Loss
 
-<br> [Paper](https://arxiv.org/abs/2009.14119) |
-[Pretrained models](MODEL_ZOO.md)
+<br> [Paper](https://arxiv.org/abs/2110.10955) |
+[Pretrained models](https://github.com/Alibaba-MIIL/PartialLabelingCSL/blob/main/README.md#pretrained-models)
 
 Official PyTorch Implementation
 
@@ -55,10 +55,10 @@ We provide models pretrained on the OpenImages datasset with different modes and
 
 | Model | Architecture | Link | mAP |
 | :---            | :---:      | :---:     | ---: |
-| Ignore          | TResNet-M | link      | 85.38       |
-| Negative        | TResNet-M | [link]    | 85.85       |
-| Selective (CSL) | TResNet-M  | [link]   | 86.72       |
-| Selective (CSL) | TResNet-L  | [link]   | **87.34**       |
+| Ignore          | TResNet-M | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/CSL/opim_v6/mtresnet_opim_ignore.pth)      | 85.38       |
+| Negative        | TResNet-M | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/CSL/opim_v6/mtresnet_opim_negative.pth)    | 85.85       |
+| Selective (CSL) | TResNet-M  | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/CSL/opim_v6/mtresnet_opim_86.72.pth)      | 86.72       |
+| Selective (CSL) | TResNet-L  | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/CSL/opim_v6/ltresnet_v2_opim_87.34.pth)   | **87.34**   |
  
 
 
@@ -157,13 +157,14 @@ The training code contains also the procedure for estimting the class distributi
 
 ## Citation
 ```
- @misc{benbaruch2020asymmetric, 
-        title={Asymmetric Loss For Multi-Label Classification}, 
-        author={Emanuel Ben-Baruch and Tal Ridnik and Nadav Zamir and Asaf Noy and Itamar Friedman and Matan Protter and Lihi Zelnik-Manor}, 
-        year={2020}, 
-        eprint={2009.14119},
-        archivePrefix={arXiv}, 
-        primaryClass={cs.CV} }
+@misc{benbaruch2021multilabel,
+      title={Multi-label Classification with Partial Annotations using Class-aware Selective Loss}, 
+      author={Emanuel Ben-Baruch and Tal Ridnik and Itamar Friedman and Avi Ben-Cohen and Nadav Zamir and Asaf Noy and Lihi Zelnik-Manor},
+      year={2021},
+      eprint={2110.10955},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 ## Acknowledgements
