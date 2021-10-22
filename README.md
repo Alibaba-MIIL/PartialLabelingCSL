@@ -5,8 +5,7 @@
 
 Official PyTorch Implementation
 
-> Emanuel Ben-Baruch, Tal Ridnik, Avi Ben-Cohen, Nadav Zamir, Asaf Noy, Itamar
-> Friedman, Lihi Zelnik-Manor<br/> DAMO Academy, Alibaba
+> Emanuel Ben-Baruch, Tal Ridnik, Itamar Friedman, Avi Ben-Cohen, Nadav Zamir, Asaf Noy, Lihi Zelnik-Manor<br/> DAMO Academy, Alibaba
 > Group
 
 **Abstract**
