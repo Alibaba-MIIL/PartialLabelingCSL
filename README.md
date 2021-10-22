@@ -1,3 +1,5 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/multi-label-classification-with-partial/multi-label-classification-on-openimages-v6)](https://paperswithcode.com/sota/multi-label-classification-on-openimages-v6?p=multi-label-classification-with-partial)
+
 # Multi-label Classification with Partial Annotations using Class-aware Selective Loss
 
 <br> [Paper](https://arxiv.org/abs/2110.10955) |
