@@ -18,7 +18,7 @@ In this work, we analyze the partial labeling problem, then propose a solution b
 First, un-annotated labels should be treated selectively according to two probability quantities: the class distribution in the overall dataset and the specific label likelihood for a given data sample.
 We propose to estimate the class distribution using a dedicated temporary model, and we show its improved efficiency over a naive estimation computed using the dataset's partial annotations.
 Second, during the training of the target model, we emphasize the contribution of annotated labels over originally un-annotated labels by using a dedicated asymmetric loss.
-Experiments conducted on three partially labeled datasets, OpenImages, LVIS, and simulated-COCO, demonstrate the effectiveness of our approach. Specifically, with our novel selective approach, we achieve state-of-the-art results on OpenImages dataset. Code will be made available.
+Experiments conducted on three partially labeled datasets, OpenImages, LVIS, and simulated-COCO, demonstrate the effectiveness of our approach. Specifically, with our novel selective approach, we achieve state-of-the-art results on OpenImages dataset. 
 
 <!-- ### Challenges in Partial Labeling
 (a) In a partially labeled dataset, only a portion of the samples are annotated for a given class. (b) "Ignore" mode exploits only the annotated samples which may lead to a limited decision boundary. (c) "Negative" mode naively treats all un-annotated labels as negatives. It may produce suboptimal decision boundary as it adds noise of un-annotated positive labels. Also, annotated and un-annotated negative samples contribute similarly to the optimization. (d) Our approach aims at mitigating these drawbacks by predicting the probability of a label being present in the image.
@@ -44,7 +44,7 @@ An overview of our approach is summarized in the following figure:
 
 ### Loss Implementation 
 
-Our loss consists of a selective approach for adjusting the training mode for each class individualy and a partial asymmetric loss. 
+Our loss consists of a selective approach that adjusts the training mode for each class individually and a partial asymmetric loss.
 <!-- The selective approach is based on two probabilities quantities: label likelihood and label prior. The partial asymmetric loss emphasizes the contribution of the annotated labels.   -->
 An implementation of the Class-aware Selective Loss (CSL) can be found [here](/src/loss_functions/partial_asymmetric_loss.py). 
 - ```class PartialSelectiveLoss(nn.Module)```
@@ -52,7 +52,7 @@ An implementation of the Class-aware Selective Loss (CSL) can be found [here](/s
 
 ## Pretrained Models
 <!-- In this [link](MODEL_ZOO.md), we provide pre-trained models on various dataset.  -->
-We provide models pretrained on the OpenImages datasset with different modes and architectures:
+We provide models pretrained on the OpenImages dataset with different partial training-modes and architectures:
 
 | Model | Architecture | Link | mAP |
 | :---            | :---:      | :---:     | ---: |
@@ -64,8 +64,8 @@ We provide models pretrained on the OpenImages datasset with different modes and
 
 
 ## Inference Code (Demo)
-We provide [inference code](infer.py), that demonstrate how to load the
-model, pre-process an image and do inference. Example run of
+We provide [inference code](infer.py), that demonstrates how to load the
+model, pre-process an image and do inference. An example run of
 OpenImages model (after downloading the relevant model):
 ```
 python infer.py  \
@@ -73,7 +73,7 @@ python infer.py  \
 --model_name=tresnet_m \
 --model_path=./models_local/mtresnet_opim_86.72.pth \
 --pic_path=./pics/10162266293_c7634cbda9_o.jpg \
---input_size=448
+--input_size=224
 ```
 
 ### Result Examples 
@@ -88,19 +88,19 @@ python infer.py  \
 
 
 ## Training Code
-Training code is provided in ([train.py](train.py)). Also, code for simulating partial annotation for the [MS-COCO dataset](https://cocodataset.org/#download) is available ([here](src/helper_functions/coco_simulation.py)). In particular, two "partial" simulation schemes are implemented: fix-per-class(FPC) and random-per-sample (RPS).
+Training code is provided in -[train.py](train.py). Also, code for simulating partial annotation for the [MS-COCO dataset](https://cocodataset.org/#download) is available -[coco_simulation](src/helper_functions/coco_simulation.py). In particular, two "partial" simulation schemes are implemented: fix-per-class(FPC) and random-per-sample (RPS).
 - FPC: For each class, we randomly sample a fixed number of positive annotations and the same number of negative annotations.  The rest of the annotations are dropped.
-- RPA: We omit each annotation with probability p.
+- RPS: We omit each annotation with probability p.
 
 Pretrained weights using the ImageNet-21k dataset can be found here: [link](https://github.com/Alibaba-MIIL/ImageNet21K/blob/main/MODEL_ZOO.md)\
 Pretrained weights using the ImageNet-1k dataset can be found here: [link](https://github.com/Alibaba-MIIL/TResNet/blob/master/MODEL_ZOO.md)
 
 Example of training with RPS simulation:
 ```
---data=/mnt/datasets/COCO/COCO_2014
+--data=/datasets/COCO/COCO_2014
 --model-path=models/pretrain/mtresnet_21k
 --gamma_pos=0
---gamma_neg=4
+--gamma_neg=1
 --gamma_unann=4
 --simulate_partial_type=rps
 --simulate_partial_param=0.5
@@ -115,7 +115,7 @@ Example of training with FPC simulation:
 --data=/mnt/datasets/COCO/COCO_2014
 --model-path=models/pretrain/mtresnet_21k
 --gamma_pos=0
---gamma_neg=4
+--gamma_neg=3
 --gamma_unann=4
 --simulate_partial_type=fpc
 --simulate_partial_param=1000
@@ -146,7 +146,7 @@ Example of training with FPC simulation:
 
 
 ## Estimating the Class Distribution
-The training code contains also the procedure for estimting the class distribution from the data. Our approach enables to rank the classes based on training a temporary model usinig the *Ignore* mode. [link](https://github.com/Alibaba-MIIL/PartialLabelingCSL/blob/cadc2afab73294a0e9e0799eec06b095e50e646e/src/loss_functions/partial_asymmetric_loss.py#L131)
+The training code contains also the procedure for estimating the class distribution from the data. Our approach enables us to rank the classes based on predictions of a temporary model trained using the *Ignore* mode. [link](https://github.com/Alibaba-MIIL/PartialLabelingCSL/blob/cadc2afab73294a0e9e0799eec06b095e50e646e/src/loss_functions/partial_asymmetric_loss.py#L131)
 
 #### Top 10 classes:
 | Method                    | Top 10 ranked classes      | 
