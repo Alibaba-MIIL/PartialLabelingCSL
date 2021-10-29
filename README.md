@@ -169,5 +169,5 @@ The training code contains also the procedure for estimating the class distribut
 ```
 
 ## Acknowledgements
-Several images from [OpenImages dataset](https://storage.googleapis.com/openimages/web/index.html) are used in this project. ֿ\
+Several images from [OpenImages dataset](https://storage.googleapis.com/openimages/web/index.html) are used in this project.
 Some components of this code implementation are adapted from the repository https://github.com/Alibaba-MIIL/ASL.
