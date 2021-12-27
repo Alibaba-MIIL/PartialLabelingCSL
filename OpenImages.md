@@ -12,7 +12,7 @@ For reducing the dataset size, all images were resized such that the short edge 
 
 # Download
 
-| Item                    | Link        | 
+| Item                    |         | 
 | :---                     | :---:      |
 | Training data                    | [link]()        | 
 | Testing data           |  [link]()    |
