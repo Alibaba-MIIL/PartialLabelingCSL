@@ -31,6 +31,10 @@ Experiments conducted on three partially labeled datasets, OpenImages, LVIS, and
 </table>
 </p> -->
 
+## OpenImages 
+We provide a direct and convenient access for the OpenImages (V6) dataset. This will enable common and reproduceble basline for benchmarking and future research.
+See further details [here]
+
 ### Class-aware Selective Approach
 An overview of our approach is summarized in the following figure:
  
