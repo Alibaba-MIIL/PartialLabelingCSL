@@ -3,7 +3,8 @@
 # Multi-label Classification with Partial Annotations using Class-aware Selective Loss
 
 <br> [Paper](https://arxiv.org/abs/2110.10955) |
-[Pretrained models](https://github.com/Alibaba-MIIL/PartialLabelingCSL/blob/main/README.md#pretrained-models)
+[Pretrained models](https://github.com/Alibaba-MIIL/PartialLabelingCSL/blob/main/README.md#pretrained-models) |
+[OpenImages download](https://github.com/Alibaba-MIIL/PartialLabelingCSL/blob/main/OpenImages.md)
 
 Official PyTorch Implementation
 
@@ -31,7 +32,7 @@ Experiments conducted on three partially labeled datasets, OpenImages, LVIS, and
 </table>
 </p> -->
 
-## OpenImages 
+### Direct OpenImages Download is now available.
 We now provide a direct and convenient access for the OpenImages (V6) dataset. This will enable common and reproduceble basline for benchmarking, and future research.
 See further details [here](https://github.com/Alibaba-MIIL/PartialLabelingCSL/blob/main/OpenImages.md).
 
