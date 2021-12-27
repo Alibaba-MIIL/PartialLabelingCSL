@@ -2,7 +2,7 @@
 
 The original OpenImages dataset is available [here](https://storage.googleapis.com/openimages/web/index.html). However, we found it might be challenging to download and process the dataset. 
 
-Hence, we provide a direct access for our downloaded and processed OpenImages (V6) dataset.
+Hence, we provide a direct access for our processed OpenImages (V6) dataset.
 This can enable common basline for benchmarking and reproducing the article results, and for future research.
 
 #### Notice that when downloading and using OpenImages, one must comply with the original dataset licence, which is provided [here](https://storage.googleapis.com/openimages/web/factsfigures.html#:~:text=red%20indicates%20negatives.-,Licenses,-The%20annotations%20are)
@@ -11,10 +11,10 @@ This can enable common basline for benchmarking and reproducing the article resu
 
 | Item                    |         | 
 | :---                     | :---:      |
-| Training data                    | [link]()        | 
-| Testing data           |  [link]()    |
-| Annotationo file       | [link]()   |
-| MID-format   | [link]()    |
+| Training data                    | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/public/Open_Images_V6/train.tar.gz)        | 
+| Testing data           |  [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/public/Open_Images_V6/test.tar.gz)    |
+| Annotationo file       | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/public/Open_Images_V6/data.csv)   |
+| MID-format   | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/public/Open_Images_V6/mid_to_classes.pth)    |
 
 
 ### Data Pre-processing
