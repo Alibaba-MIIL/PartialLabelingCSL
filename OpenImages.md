@@ -7,9 +7,6 @@ This can enable common basline for benchmarking and reproducing the article resu
 
 #### Notice that when downloading and using OpenImages, one must comply with the original dataset licence, which is provided [here](https://storage.googleapis.com/openimages/web/factsfigures.html#:~:text=red%20indicates%20negatives.-,Licenses,-The%20annotations%20are)
 
-# Data Pre-processing
-For reducing the dataset size, all images were resized such that the short edge is 256.
-
 # Download
 
 | Item                    |         | 
@@ -19,6 +16,9 @@ For reducing the dataset size, all images were resized such that the short edge 
 | Annotationo file       | [link]()   |
 | MID-format   | [link]()    |
 
+
+### Data Pre-processing
+Note that for reducing the dataset size, we resized all images such that the short edge is 256.
 
 
 # Acknowledgment
