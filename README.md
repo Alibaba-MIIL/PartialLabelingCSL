@@ -33,7 +33,7 @@ Experiments conducted on three partially labeled datasets, OpenImages, LVIS, and
 </p> -->
 
 ### Direct OpenImages Download is now available.
-We now provide a direct and convenient access for the OpenImages (V6) dataset. This will enable common and reproduceble basline for benchmarking, and future research.
+We provide a direct and convenient access for the OpenImages (V6) dataset. This will enable common and reproduceble basline for benchmarking, and future research.
 See further details [here](https://github.com/Alibaba-MIIL/PartialLabelingCSL/blob/main/OpenImages.md).
 
 ### Class-aware Selective Approach
