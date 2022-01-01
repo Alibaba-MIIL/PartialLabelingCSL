@@ -37,12 +37,12 @@ def inference(im, model, class_list, args):
     scores = np_output[idx_sort][: args.top_k]
     # Threshold
     idx_th = scores > args.th
-    return detected_classes[idx_th], scores[idx_th], im
+    return detected_classes[idx_th], scores[idx_th], im, tensor_batch
 
 
 def display_image(im, tags, filename):
 
-    path_dest = "/results"
+    path_dest = "./results"
     if not os.path.exists(path_dest):
         os.makedirs(path_dest)
 
@@ -64,7 +64,8 @@ def main():
     # Setup model
     print('Creating and loading the model...')
     state = torch.load(args.model_path, map_location='cpu')
-    # args.num_classes = state['num_classes']
+    args.num_classes = state['num_classes']
+    print(f"Number of Classes: {args.num_classes}")
     model = create_model(args).cuda()
     model.load_state_dict(state['model'], strict=True)
     model.eval()
@@ -78,7 +79,7 @@ def main():
 
     # Inference
     print('Inference...')
-    tags, scores, im = inference(args.pic_path, model, class_list, args)
+    tags, scores, im, tensor_batch = inference(args.pic_path, model, class_list, args)
 
     # displaying image
     print('Display results...')
@@ -94,15 +95,6 @@ def main():
     loss1 = loss_func1(output, target)
     loss2 = loss_func2(output, target)
     assert abs((loss1.item() - loss2.item())) < 1e-6
-
-    # displaying image
-    print('showing image on screen...')
-    fig = plt.figure()
-    plt.imshow(im)
-    plt.axis('off')
-    plt.axis('tight')
-    # plt.rcParams["axes.titlesize"] = 10
-    plt.title("detected classes: {}".format(detected_classes))
 
     plt.show()
     print('done\n')
